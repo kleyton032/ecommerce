@@ -11,8 +11,6 @@ parent::__construct($opts, $tpl_dir);
 
 }
 
-
-
 }
 
 

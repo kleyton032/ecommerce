@@ -30,6 +30,7 @@ public function __construct($opts = array(), $tpl_dir = "/views/"){
 		$this->setData($this->options["data"]);
 		if ($this->options["header"] === true) $this->tpl->draw("header");
 	}
+
 	private function setData($data = array()){
 		foreach ($data as $key => $value) {
 			$this->tpl->assign($key, $value);
