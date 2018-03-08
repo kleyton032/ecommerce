@@ -81,6 +81,7 @@ class User extends Model{
 	}
 
 	public function get($iduser){
+		
 		$sql = new Sql();
 
 		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b USING(idperson) WHERE a.iduser = :iduser", array(
@@ -88,7 +89,7 @@ class User extends Model{
 
 		));
 
-		$this->setData($results);
+		$this->setData($results[0]);
 
 
 	}
@@ -109,6 +110,17 @@ class User extends Model{
 		$this->setData($results[0]);
 
 
+
+	}
+
+	public function delete(){
+
+		$sql = new Sql();
+
+		$sql->query("CALL sp_users_delete(:iduser)", array(
+
+			":iduser"=>$this->getiduser()
+		));
 
 	}
 
