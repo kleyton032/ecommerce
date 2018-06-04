@@ -17,7 +17,7 @@ class Product extends Model{
 	}
 
 
-
+	//metodo salvar 
 	public function save(){
 
 		$sql = new Sql();
