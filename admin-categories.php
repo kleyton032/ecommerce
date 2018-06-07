@@ -104,6 +104,8 @@ $app->post("/admin/categories/:idcategory", function($idcategory){
 
 $app->get("/admin/categories/:idcategory/products", function($idcategory){
 	
+	User::verifyLogin();
+	
 	$category = new Category();
 	
 	$category->get((int)$idcategory);
